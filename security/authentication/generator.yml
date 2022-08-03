@@ -1,0 +1,20 @@
+
+
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: gen-policy-generator
+policyDefaults:
+  namespace: dmte-acm-samples
+  remediationAction: enforce
+  placement:
+    placementRuleName: "hub-only"
+
+policies:
+  - name: oauth-policy
+    remediationAction: enforce
+    manifests:
+      - path: oauth.yml
+        complianceType: mustonlyhave
+        metadataComplianceType: musthave
+
