@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+data:
+  apiUrl: '{{ (lookup "config.openshift.io/v1" "Infrastructure" "" "cluster").status.infrastructureName }}' 
+  clusterName: '{{ (lookup "config.openshift.io/v1" "Infrastructure" "" "cluster").status.infrastructureName }}'
+kind: ConfigMap
+metadata:
+  name: test-templates
+  namespace: wookie-policies
