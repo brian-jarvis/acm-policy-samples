@@ -6,7 +6,6 @@ data:
   elements: |
     '{{ range $cluster := (lookup "cluster.open-cluster-management.io/v1" "ManagedCluster" "" "").items }}'
       - cluster: '{{ $cluster.metadata.labels.name }}'
-        url: '{{ $cluster.spec.managedClusterClientConfigs[0].url }}'
     '{{- end }}'
 
 
