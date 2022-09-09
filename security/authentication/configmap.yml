@@ -3,7 +3,7 @@ apiVersion: v1
 data:
   apiUrl: '{{ (lookup "config.openshift.io/v1" "Infrastructure" "" "cluster").status.infrastructureName }}' 
   clusterName: '{{ upper (lookup "config.openshift.io/v1" "Infrastructure" "" "cluster").status.infrastructureName }}'
-  elements:
+  elements: |
     '{{ range $cluster := (lookup "cluster.open-cluster-management.io/v1" "ManagedCluster" "" "").items }}'
       - cluster: '{{ $cluster.metadata.labels.name }}'
         url: '{{ $cluster.spec.managedClusterClientConfigs.url }}'
