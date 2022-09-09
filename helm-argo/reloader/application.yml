@@ -1,0 +1,26 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-helm
+spec:
+  destination:
+    name: 'reloader'
+    namespace: 'default'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://stakater.github.io/stakater-charts'
+    targetRevision: 'v0.0.52'
+    chart: reloader
+    helm: 
+      parameters:
+        - name: cluster_name
+          value: '{{ fromClusterClaim "name" }}'
+  project: cluster-helm-repos
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
