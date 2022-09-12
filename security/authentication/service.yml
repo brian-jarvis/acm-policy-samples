@@ -4,4 +4,4 @@ metadata:
   name: list-tester
   namespace: wookie-policies
 spec:
-  loadBalancerSourceRanges: {{ fromConfigMap "wookie-policies" "test-templates" "lOut" | list }}
+  loadBalancerSourceRanges: '{{ fromConfigMap "wookie-policies" "test-templates" "lOut" | list }}'
