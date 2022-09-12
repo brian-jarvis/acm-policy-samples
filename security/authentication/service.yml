@@ -3,5 +3,7 @@ kind: Service
 metadata:
   name: list-tester
   namespace: wookie-policies
+  labels:
+    loadBalancerSourceRanges: '{{ fromConfigMap "wookie-policies" "test-templates" "lOut" | list }}'
 spec:
-  loadBalancerSourceRanges: '{{ fromConfigMap "wookie-policies" "test-templates" "lOut" | list }}'
+  # loadBalancerSourceRanges: '{{ fromConfigMap "wookie-policies" "test-templates" "lOut" | list }}'
