@@ -3,7 +3,7 @@ apiVersion: v1
 data:
   apiUrl: '{{ (lookup "config.openshift.io/v1" "Infrastructure" "" "cluster").status.infrastructureName }}' 
   clusterName: '{{ $n := split "." (lookup "config.openshift.io/v1" "Infrastructure" "" "cluster").status.apiServerURL }}{{ $n._1 }}'
-  lOut: {{ $a := list "10.10.10.10" "1.1.1.1" }}{{ $a }}
+  lOut: '"10.10.10.10" "1.1.1.1"'
 kind: ConfigMap
 metadata:
   name: test-templates

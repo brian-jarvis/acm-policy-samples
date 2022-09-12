@@ -18,4 +18,6 @@ policies:
         complianceType: mustonlyhave
         metadataComplianceType: musthave
       - path: configmap.yml
-
+        complianceType: mustonlyhave
+      - path: service.yml
+        complianceType: mustonlyhave
