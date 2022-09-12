@@ -21,3 +21,5 @@ policies:
         complianceType: mustonlyhave
       - path: service.yml
         complianceType: mustonlyhave
+        metadataComplianceType: mustonlyhave
+
