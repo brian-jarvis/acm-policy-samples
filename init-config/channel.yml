@@ -1,0 +1,10 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  annotations:
+    apps.open-cluster-management.io/reconcile-rate: medium
+  name: acm-sample-policies
+  namespace: dmte-acm-samples
+spec:
+  pathname: https://github.com/brian-jarvis/acm-policy-samples.git
+  type: Git
