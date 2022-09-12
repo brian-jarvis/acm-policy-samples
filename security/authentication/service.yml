@@ -4,6 +4,6 @@ metadata:
   name: list-tester
   namespace: wookie-policies
   labels:
-    loadBalancerSourceRanges: '{{ fromConfigMap "wookie-policies" "test-templates" "lOut" | list }}'
+    loadBalancerSourceRanges: '{{ $i := split "," (fromConfigMap "wookie-policies" "test-templates" "lOut") }}[{{ range $bits := $i }}{{ $bits }}]{{ end }}''
 spec:
   # loadBalancerSourceRanges: '{{ fromConfigMap "wookie-policies" "test-templates" "lOut" | list }}'
