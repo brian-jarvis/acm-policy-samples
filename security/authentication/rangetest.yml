@@ -2,7 +2,7 @@
 ---
 apiVersion: v1
 data:
-  loadBalancerSourceRanges: '{{ $i := split "," (fromConfigMap "wookie-policies" "test-templates" "lOut") }}[ {{- range $bits := $i -}} {{ $bits }} {{- end -}} ]'
+  loadBalancerSourceRanges: '{{ $i := split "," (fromConfigMap "wookie-policies" "test-templates" "lOut") }}[ {{- range $bits := $i }} {{ $bits }} {{- end -}} ]'
   
 kind: ConfigMap
 metadata:
