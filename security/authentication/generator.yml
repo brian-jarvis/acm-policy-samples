@@ -17,13 +17,13 @@ policies:
       - path: oauth.yml
         complianceType: mustonlyhave
         metadataComplianceType: musthave
-      - path: configmap.ymlv
+      - path: configmap.yml
         complianceType: mustonlyhave
       - path: rangetest.yml
         complianceType: mustonlyhave
-      - path: service.yml
-        complianceType: mustonlyhave
-        metadataComplianceType: mustonlyhave
+      # - path: service.yml
+      #   complianceType: mustonlyhave
+      #   metadataComplianceType: mustonlyhave
       - path: argo-app.yml
         complianceType: mustonlyhave
 
