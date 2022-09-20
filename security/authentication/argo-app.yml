@@ -16,4 +16,4 @@ spec:
     helm: 
       parameters:
         - name: logsCollection.containers.excludePaths
-          value: [{{ $i := split "," (fromConfigMap "wookie-policies" "test-templates" "lOut") }}{{- range $bits := $i }} "{{ $bits }}" {{- end }}]'
+          value: [{{ $i := split "," (fromConfigMap "wookie-policies" "test-templates" "lOut") }}{{- range $bits := $i }} "{{ $bits }}" {{- end }}]
