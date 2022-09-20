@@ -11,8 +11,8 @@ spec:
     namespace: 'otel'
     server: 'https://kubernetes.default.svc'
   source:
-    path: 'helm-charts/splunk-otel-collector'
-    repoURL: 'https://github.com/signalfx/splunk-otel-collector-chart'
+    path: ''
+    repoURL: 'https://signalfx.github.io/splunk-otel-collector-chart'
     targetRevision: '0.59.0'
     chart: splunk-otel-collector
     helm: 
