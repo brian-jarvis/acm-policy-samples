@@ -4,6 +4,7 @@ metadata:
   name: splunk-otel-collector
   namespace: openshift-gitops
 spec:
+  project: default
   destination:
     name: ''
     namespace: 'otel'
