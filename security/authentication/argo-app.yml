@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: splunk-otel-collector
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: ''
+    namespace: 'otel'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://github.com/brian-jarvis/values-helm'
+    targetRevision: '0.43.2'
+    chart: splunk-otel-collector
+    helm: 
+      parameters:
+        - name: logsCollection.containers.excludePaths
+          value: [{{ $i := split "," (fromConfigMap "wookie-policies" "test-templates" "lOut") }}{{- range $bits := $i }} "{{ $bits }}" {{- end }}]'
