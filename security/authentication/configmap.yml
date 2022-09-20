@@ -3,7 +3,7 @@ apiVersion: v1
 data:
   apiUrl: '{{ (lookup "config.openshift.io/v1" "Infrastructure" "" "cluster").status.infrastructureName }}' 
   clusterName: '{{ $n := split "." (lookup "config.openshift.io/v1" "Infrastructure" "" "cluster").status.apiServerURL }}{{ $n._1 }}'
-  lOut_0: '10.10.10./24, 1.1.1.1/24'
+  lOut: '10.10.10./24, 1.1.1.1/24'
   lOut.count: "2"
 kind: ConfigMap
 metadata:
