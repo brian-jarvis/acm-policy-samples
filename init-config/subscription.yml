@@ -15,4 +15,4 @@ spec:
   placement:
     placementRef:
       kind: PlacementRule
-      name: acm-sample-policies
+      name: hub-only
