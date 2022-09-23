@@ -7,7 +7,7 @@ metadata:
 data:
   service.teams: |
     recipientUrls: 
-      bry-general: https://redhat0.webhook.office.com/webhookb2/03dd2936-854b-43d3-9272-d0b57199c96c@64dc69e4-d083-49fc-9569-ebece1dd1408/IncomingWebhook/2a60cc8236fa4fbfa476da179ca23bbd/51f689cf-0a03-4612-9021-bbe10a27e37d
+      bry-general: $bry-general-teams-url
 
   trigger.sync-operation-change: |
     - when: app.status.operationState.phase in ['Succeeded']
