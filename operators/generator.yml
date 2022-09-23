@@ -15,8 +15,6 @@ policies:
   - name: gitops-operator
     remediationAction: enforce
     namespaceSelector:
-      include: 
-        - openshift-gitops
       matchLabels:
         app.host: argocd
       exclude: 
@@ -29,8 +27,6 @@ policies:
   - name: gitops-operator-status
     remediationAction: inform
     namespaceSelector:
-      include: 
-        - openshift-gitops
       matchLabels:
         app.host: argocd
       exclude: 
