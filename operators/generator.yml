@@ -14,12 +14,28 @@ placementBindingDefaults:
 policies:
   - name: gitops-operator
     remediationAction: enforce
+    namespaceSelector:
+      include: 
+        - openshift-gitops
+      matchLabels:
+        - app.host: argocd
+      exclude: 
+        - kube-*
+        - default
     manifests:
       - path: gitops/
         complianceType: musthave
 
   - name: gitops-operator-status
     remediationAction: inform
+    namespaceSelector:
+      include: 
+        - openshift-gitops
+      matchLabels:
+        - app.host: argocd
+      exclude: 
+        - kube-*
+        - default
     manifests:
       - path: gitops/health/
         complianceType: musthave

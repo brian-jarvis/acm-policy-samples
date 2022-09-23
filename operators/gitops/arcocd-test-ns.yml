@@ -1,0 +1,8 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: argocd-test-instance
+  labels:
+    openshift.io/cluster-monitoring: 'true'
+    app.host: argocd
