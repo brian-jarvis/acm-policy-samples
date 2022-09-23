@@ -3,3 +3,4 @@ kind: Application
 metadata:
   annotations:
     notifications.argoproj.io/subscribe.sync-operation-change.teams: bry-general
+  name: acm-bootstrap
