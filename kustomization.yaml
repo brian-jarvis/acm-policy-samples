@@ -3,6 +3,7 @@ kind: Kustomization
 bases:
   - security/
   - helm-argo/
+  - operators/
 
 namespace: dmte-acm-samples
 

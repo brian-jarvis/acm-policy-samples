@@ -1,0 +1,31 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: gen-policy-generator
+policyDefaults:
+  namespace: dmte-acm-samples
+  remediationAction: enforce
+  policySets:
+    - operators
+placementBindingDefaults:
+  name: "operators-binding"
+
+policies:
+  - name: gitops-operator
+    remediationAction: enforce
+    manifests:
+      - path: gitops/
+        complianceType: musthave
+
+  - name: gitops-operator-status
+    remediationAction: inform
+    manifests:
+      - path: gitops/health/
+        complianceType: musthave
+
+
+policySets:
+  - name: operators
+    placement:
+      placementRuleName: "hub-only"

@@ -1,0 +1,22 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: argocd-notifications-cm
+  labels:
+    app.kubernetes.io/part-of: argocd
+data:
+  service.teams: |
+    recipientUrls: 
+      bry-general: https://redhat0.webhook.office.com/webhookb2/03dd2936-854b-43d3-9272-d0b57199c96c@64dc69e4-d083-49fc-9569-ebece1dd1408/IncomingWebhook/2a60cc8236fa4fbfa476da179ca23bbd/51f689cf-0a03-4612-9021-bbe10a27e37d
+
+  trigger.sync-operation-change: |
+    - when: app.status.operationState.phase in ['Succeeded']
+      send: [app-sync-succeeded]
+    - when: app.status.operationState.phase in ['Running']
+      send: [app-sync-running]
+    - when: app.status.health.status == 'Degraded'
+      send: [app-health-degraded]
+    - when: app.status.operationState.phase in ['Error', 'Failed']
+      send: [app-sync-failed]
+  
+      
