@@ -32,7 +32,7 @@ policies:
       include: 
         - openshift-gitops
       matchLabels:
-        - app.host: argocd
+        app.host: argocd
       exclude: 
         - kube-*
         - default
