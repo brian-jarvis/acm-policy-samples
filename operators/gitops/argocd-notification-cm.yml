@@ -7,7 +7,7 @@ metadata:
 data:
   service.teams: |
     recipientUrls: 
-      bry-general: bry-general-teams-url
+      bry-general: $bry-general-teams-url
 
   trigger.sync-operation-change: |
     - when: app.status.operationState.phase in ['Succeeded']
