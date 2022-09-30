@@ -4,6 +4,7 @@ bases:
   - security/
   - helm-argo/
   - operators/
+  - acm-cluster-configs
 
 namespace: dmte-acm-samples
 
