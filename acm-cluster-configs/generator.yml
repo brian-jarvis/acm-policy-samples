@@ -9,7 +9,7 @@ policyDefaults:
   policySets:
     - cluster-configs
 placementBindingDefaults:
-  name: "operators-binding"
+  name: "cluster-config-binding"
 
 policies:
   - name: acm-clusterclaims
