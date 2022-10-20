@@ -1,0 +1,15 @@
+﻿kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: sysdig-agent
+  namespace: sysdig-agent
+  labels:
+    app: sysdig-agent
+    app.kubernetes.io/name: sysdig
+status:
+  currentNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
+  numberMisscheduled: 0
+  desiredNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt | default 1 }}'
+  numberReady: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled  | toInt}}'
+  updatedNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
+  numberAvailable: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'

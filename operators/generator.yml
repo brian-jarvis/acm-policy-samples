@@ -37,6 +37,29 @@ policies:
         complianceType: musthave
 
 
+  - name: sysdig-operator
+    remediationAction: enforce
+    namespaceSelector:
+      matchLabels:
+        app.host: sysdig
+      exclude: 
+        - kube-*
+        - default
+    manifests:
+      - path: sysdig/
+        complianceType: musthave
+
+  - name: sysdig-operator-status
+    remediationAction: inform
+    namespaceSelector:
+      matchLabels:
+        app.host: sysdig
+      exclude: 
+        - kube-*
+        - default
+    manifests:
+      - path: sysdig/health/
+        complianceType: musthave
 policySets:
   - name: operators
     placement:
