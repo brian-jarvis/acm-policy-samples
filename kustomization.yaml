@@ -8,6 +8,6 @@ bases:
 
 namespace: dmte-acm-samples
 
-resources:
-  - acm-placements/
+# resources:
+#   - acm-placements/
 
