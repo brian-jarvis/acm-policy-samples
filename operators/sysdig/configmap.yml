@@ -7,6 +7,7 @@ data:
   numberReady: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled  | toInt}}'
   updatedNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
   numberAvailable: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
+  marker: "test"
 kind: ConfigMap
 metadata:
   name: test-templates
