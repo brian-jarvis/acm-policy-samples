@@ -1,22 +1,12 @@
 ---
 apiVersion: v1
 data:
-  currentNumberScheduled: >-
-    {{ (lookup "apps/v1" "DaemonSet" "sysdig-agent"
-    "sysdig-agent").status.desiredNumberScheduled | toInt }}
-  desiredNumberScheduled: >-
-    {{ (lookup "apps/v1" "DaemonSet" "sysdig-agent"
-    "sysdig-agent").status.desiredNumberScheduled | toInt | default 1 }}
-  numberAvailable: >-
-    {{ (lookup "apps/v1" "DaemonSet" "sysdig-agent"
-    "sysdig-agent").status.desiredNumberScheduled | toInt }}
-  numberMisscheduled: 0
-  numberReady: >-
-    {{ (lookup "apps/v1" "DaemonSet" "sysdig-agent"
-    "sysdig-agent").status.desiredNumberScheduled  | toInt}}
-  updatedNumberScheduled: >-
-    {{ (lookup "apps/v1" "DaemonSet" "sysdig-agent"
-    "sysdig-agent").status.desiredNumberScheduled | toInt }}
+  currentNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
+  numberMisscheduled: "0"
+  desiredNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt | default 1 }}'
+  numberReady: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled  | toInt}}'
+  updatedNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
+  numberAvailable: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
 kind: ConfigMap
 metadata:
   name: test-templates
