@@ -8,7 +8,7 @@ data:
   updatedNumberScheduled: A{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled  }}Z
   numberAvailable: A{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled  }}Z
   marker: "test"
-  totalNodes: '{{ $nodeCount := 0 }}{{ range $index, $element := (lookup "v1" "Node" "" "") }}{{ $nodeCount = $index }}{{ end }}{{ $nodeCount }}'
+  totalNodes: '{{ $nodeCount := 0 }}{{ range $index, $element := (lookup "v1" "Node" "" "").items }}{{ $nodeCount = $index }}{{ end }}{{ $nodeCount }}'
 kind: ConfigMap
 metadata:
   name: test-templates
