@@ -145,7 +145,7 @@ spec:
             - name: podinfo
               mountPath: /etc/podinfo
           terminationMessagePolicy: File
-          image: 'quay.io/bjarvis/versioned-hello'
+          image: 'quay.io/bjarvis/versioned-hello:latest'
       serviceAccount: sysdig-agent
       volumes:
         - name: modprobe-d
