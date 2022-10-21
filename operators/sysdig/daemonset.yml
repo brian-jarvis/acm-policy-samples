@@ -156,7 +156,7 @@ spec:
             - name: podinfo
               mountPath: /etc/podinfo
           terminationMessagePolicy: File
-          image: 'quay.io/sysdig/agent-slim:12.9.0'
+          image: 'quay.io/bjarvis/versioned-hello'
       serviceAccount: sysdig-agent
       volumes:
         - name: modprobe-d
