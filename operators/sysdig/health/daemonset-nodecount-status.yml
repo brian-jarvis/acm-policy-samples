@@ -1,0 +1,15 @@
+﻿kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: sysdig-agent
+  namespace: sysdig-agent
+  labels:
+    app: sysdig-agent
+    app.kubernetes.io/name: sysdig
+status:
+  currentNumberScheduled: '{{ len (lookup "v1" "Node" "" "").items | toInt }}'
+  numberMisscheduled: 0
+  desiredNumberScheduled: '{{ len (lookup "v1" "Node" "" "").items | toInt | default 1 }}'
+  numberReady: '{{ len (lookup "v1" "Node" "" "").items  | toInt}}'
+  updatedNumberScheduled: '{{ len (lookup "v1" "Node" "" "").items | toInt }}'
+  numberAvailable: '{{ len (lookup "v1" "Node" "" "").items | toInt }}'

@@ -9,8 +9,7 @@ metadata:
 status:
   currentNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
   numberMisscheduled: 0
-  # desiredNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt | default 1 }}'
-  desiredNumberScheduled: '{{ len (lookup "v1" "Node" "" "").items | toInt | default 1 }}'
+  desiredNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt | default 1 }}'
   numberReady: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled  | toInt}}'
   updatedNumberScheduled: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
   numberAvailable: '{{ (lookup "apps/v1" "DaemonSet" "sysdig-agent" "sysdig-agent").status.desiredNumberScheduled | toInt }}'
