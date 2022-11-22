@@ -29,7 +29,7 @@ spec:
     storage:
       pvcStrategy: per-workspace
     trustedCerts:
-      gitTrustedCertsConfigMapName: cert-cm
+      gitTrustedCertsConfigMapName: cert-cm-one
 #  devWorkspace:
 #    runningLimit: "2"
   networking: {}
