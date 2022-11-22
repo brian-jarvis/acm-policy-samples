@@ -61,17 +61,6 @@ policies:
       - path: sysdig/health/
         complianceType: musthave
 
-  - name: devspaces-operator
-    remediationAction: enforce
-    namespaceSelector:
-      matchLabels:
-        app.host: devspaces
-      exclude: 
-        - kube-*
-        - default
-    manifests:
-      - path: devspaces/
-        complianceType: musthave
 policySets:
   - name: operators
     placement:
