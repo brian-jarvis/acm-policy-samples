@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: che.eclipse.org
 data:
-  ca1-g2.crt: |-
+  ca.crt: |-
     # SMBC-Subordinate-CA1-G2
     -----BEGIN CERTIFICATE-----
     MIIGUzCCBTugAwIBAgITJwAAAATALpHMpnr7JAAAAAAABDANBgkqhkiG9w0BAQsF
@@ -44,7 +44,7 @@ data:
     b51BZWwzMdLm1zQS1jtOjUAFwf6jLqGaaOD9eFu9wGsAUwlUlq79096TQqrPcS3x
     PIjRl1urG+JUcLP0sz5k82hqovsruIRRbykd5DiE5n7chZieXHGF
     -----END CERTIFICATE-----
-  ca-g2.crt: |-
+  
     # SMBC-Root-CA-G2
     -----BEGIN CERTIFICATE-----
     MIIEHDCCAwSgAwIBAgIQXCngoMKDHZFLjZnFoLkj3TANBgkqhkiG9w0BAQsFADBK
@@ -70,7 +70,7 @@ data:
     YHzWT0AeLvgjEK2c/IrtZ7KCX8g2Mw2Evs6lroPvXKnKYnt5NaVwbk5PC4SOh2zj
     WxJAlIozip0uhIN3QThUs2wyYvmgggRXxSI+LDwsMNKZQC+bJl+STjHo9jYvcyCC
     -----END CERTIFICATE-----
-  entrust.crt: |-
+  
     # Entrust Intermediate
     -----BEGIN CERTIFICATE-----
     MIIFDjCCA/agAwIBAgIMDulMwwAAAABR03eFMA0GCSqGSIb3DQEBCwUAMIG+MQsw
@@ -102,7 +102,7 @@ data:
     exCdtTix9qrKgWRs6PLigVWXUX/hwidQosk8WwBD9lu51aX8/wdQQGcHsFXwt35u
     Lcw=
     -----END CERTIFICATE-----
-  entrust-g2.crt: |-
+  
     # Entrust Root Certification Authority - G2
     -----BEGIN CERTIFICATE-----
     MIIEPjCCAyagAwIBAgIESlOMKDANBgkqhkiG9w0BAQsFADCBvjELMAkGA1UEBhMC
